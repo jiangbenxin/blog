@@ -62,4 +62,48 @@ API 网关：Kong、KrakenD
 缓存：Redis、Memcached 
 容器技术：Docker、Kubernetes 
 日志库：Logrus、Zap、Zerolog
+### 一个表格
+```
+table {
+	width: 100%;
+	border: 2rpx solid #e7e7e7;
+	border-color: #ddd;
+	table-layout: fixed;
+	border-collapse: collapse;
+	// background-color: transparent;	
+	td {	
+		padding: 0;
+		text-align: left;
+		text-indent: 20rpx;
+		// background-color: #fafafa;
+		border: 2rpx solid #ddd;
+		font-size: 24rpx;
+	}
+
+	th {
+		border: 2rpx solid #ddd;
+	}
+	tr {
+		height: 40px;
+	}
+}
+    <td rowspan='3'></td>
+    <td colspan='3'></td>
+ axios({
+    method: 'post',
+    url: uploadImgUrl.value,
+    data: {file:file},
+    headers: {
+      'Content-Type': 'multipart/form-data',
+      'Authorization': header.value.Authorization,
+      'clientid': header.value.clientid
+    }
+  })
+    .then(response => {
+      handleWord(response.data.data)
+    })
+    .catch(error => {
+      console.error(error);
+    });
+```
 
