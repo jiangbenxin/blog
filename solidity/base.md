@@ -514,8 +514,38 @@ function insertionSort(uint[] memory a) public pure returns(uint[] memory) {
     return(a);
 }
 ```
-### 11
+### 11-构造函数
+constructor每个合约可以定义一个，并在部署合约的时候自动运行一次。它可以用来初始化合约的一些参数
 ```
+address owner; // 定义owner变量
+
+// 构造函数
+constructor(address initialOwner) {
+    owner = initialOwner; // 在部署合约的时候，将owner设置为传入的initialOwner地址
+}
+```
+构造函数的旧写法代码示例：
+```
+pragma solidity =0.4.21;
+contract Parents {
+    // 与合约名Parents同名的函数就是构造函数
+    function Parents () public {
+    }
+}
+```
+修饰器
+```
+// 定义modifier
+modifier onlyOwner {
+   require(msg.sender == owner); // 检查调用者是否为owner地址
+   _; // 如果是的话，继续运行函数主体；否则报错并revert交易
+}
+```
+带有onlyOwner修饰符的函数只能被owner地址调用，比如下面这个例子：
+```
+function changeOwner(address _newOwner) external onlyOwner{
+   owner = _newOwner; // 只有owner地址运行这个函数，并改变owner
+}
 ```
 ### 12
 ```
