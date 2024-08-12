@@ -18,7 +18,7 @@
 [极客网](https://news.fromgeek.com/)</br>
 [别人的博客](https://strikefreedom.top/archives/pipe-pool-for-splice-in-go)</br>
 ### 开源项目
-[chatgpt]https://github.com/Chanzhaoyu/chatgpt-web?tab=readme-ov-file#introduction
+[chatgpt](https://github.com/Chanzhaoyu/chatgpt-web?tab=readme-ov-file#introduction)</br>
 [nest+vue](https://github.com/zclzone/vue-naive-admin?tab=readme-ov-file)</br>
 [宋义攀一个nest+vue+threejs的开源者](https://gitee.com/songyipantest/)</br>
 [nest+ruoyi](https://github.com/taozhi1010/nest-admin)</br>
