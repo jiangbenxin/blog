@@ -9,9 +9,10 @@
 [内网穿透](https://natapp.cn/member/dashborad)</br>
 [Animate.css](https://animate.style/)</br>
 [虚拟手机号](https://sms-activate.org/cn/freePrice#activation)</br>
-[免费加速](https://microsoftedge.microsoft.com/addons/detail/hoxx-vpn-proxy/mmkgibaofkehmmnbcfleonelhenlgcbc?hl=zh-CN)</br>
 [汪总给的的代理](https://github.com/FelisCatus/SwitchyOmega/wiki/GFWList)</br>
+[免费加速](https://microsoftedge.microsoft.com/addons/detail/hoxx-vpn-proxy/mmkgibaofkehmmnbcfleonelhenlgcbc?hl=zh-CN)</br>
 [加速](https://dala.craftedbygc.com/)</br>
+[加速2](https://yyoos.to/)</br>
 ### 学习
 [极客时间](https://time.geekbang.org/ )</br>
 ### 奇怪的website
