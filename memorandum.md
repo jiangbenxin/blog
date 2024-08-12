@@ -64,6 +64,8 @@ API 网关：Kong、KrakenD
 日志库：Logrus、Zap、Zerolog
 ### 一个表格
 ```
+<td rowspan='3'></td>
+<td colspan='3'></td>
 table {
 	width: 100%;
 	border: 2rpx solid #e7e7e7;
@@ -87,23 +89,6 @@ table {
 		height: 40px;
 	}
 }
-    <td rowspan='3'></td>
-    <td colspan='3'></td>
- axios({
-    method: 'post',
-    url: uploadImgUrl.value,
-    data: {file:file},
-    headers: {
-      'Content-Type': 'multipart/form-data',
-      'Authorization': header.value.Authorization,
-      'clientid': header.value.clientid
-    }
-  })
-    .then(response => {
-      handleWord(response.data.data)
-    })
-    .catch(error => {
-      console.error(error);
-    });
+
 ```
 
