@@ -22,6 +22,8 @@
 [nest+vue](https://github.com/zclzone/vue-naive-admin?tab=readme-ov-file)</br>
 [宋义攀一个nest+vue+threejs的开源者](https://gitee.com/songyipantest/)</br>
 [nest+ruoyi](https://github.com/taozhi1010/nest-admin)</br>
+[好东西react](https://github.com/hepengwei)</br>
+
 ### remote job
 [rebase社区](https://github.com/rebase-network/who-is-hiring?tab=readme-ov-file)</br>
 [hire](https://hiring.cafe/)</br>
@@ -30,6 +32,7 @@
 [ineed](https://hk.indeed.com/)</br>
 [jbcdb](https://hk.jobsdb.com/)</br>
 [未知](https://www.jobs.femalefactor.global/)</br>
+
 ### threejs
 [threejs官网](https://threejs.org/)</br>
 [模型网](https://www.poliigon.com/texture/old-wooden-slate-shingle-roof-texture/7834  )</br>
@@ -43,6 +46,7 @@
 [学习网站threejs](https://three.ucalendar.cn/)</br>
 [小米su7源码](https://github.com/alphardex )</br>
 [su7在线演示](https://gamemcu.com/su7/)</br>
+[某个官网threejs特效](https://dala.craftedbygc.com/)</br>
 ##### 部分技术要求
 请求库协议层：GraphQl、Trpc、OpenApi。 
 框架：React、Next、Rn、Nest、Express。 
