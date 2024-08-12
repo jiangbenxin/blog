@@ -20,7 +20,7 @@
 ### 开源项目
 [chatgpt]https://github.com/Chanzhaoyu/chatgpt-web?tab=readme-ov-file#introduction
 [nest+vue](https://github.com/zclzone/vue-naive-admin?tab=readme-ov-file)</br>
-[宋义攀一个nest+vue+threejs的开源者](https://gitee.com/songyipantest/)</br>[]()</br>
+[宋义攀一个nest+vue+threejs的开源者](https://gitee.com/songyipantest/)</br>
 [nest+ruoyi](https://github.com/taozhi1010/nest-admin)</br>
 ### remote job
 [rebase社区](https://github.com/rebase-network/who-is-hiring?tab=readme-ov-file)</br>
