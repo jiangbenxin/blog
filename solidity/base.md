@@ -413,11 +413,106 @@ function d() external {
     delete _bool2; // delete 会让_bool2变为默认值，false
 }
 ```
-### 09
+### 09-常数
+**constant变量必须在声明的时候初始化，之后再也不能改变。尝试改变的话，编译不通过。**
 ```
+// constant变量必须在声明的时候初始化，之后不能改变
+uint256 constant CONSTANT_NUM = 10;
+string constant CONSTANT_STRING = "0xAA";
+bytes constant CONSTANT_BYTES = "WTF";
+address constant CONSTANT_ADDRESS = 0x0000000000000000000000000000000000000000;
 ```
-### 10
+**immutable变量可以在声明时或构造函数中初始化，因此更加灵活。在Solidity v8.0.21以后，immutable变量不需要显式初始化。反之，则需要显式初始化。 若immutable变量既在声明时初始化，又在constructor中初始化，会使用constructor初始化的值。**
 ```
+// immutable变量可以在constructor里初始化，之后不能改变
+uint256 public immutable IMMUTABLE_NUM = 9999999999;
+address public immutable IMMUTABLE_ADDRESS;
+uint256 public immutable IMMUTABLE_BLOCK;
+uint256 public immutable IMMUTABLE_TEST;
+```
+**你可以使用全局变量例如address(this)，block.number 或者自定义的函数给immutable变量初始化。在下面这个例子，我们利用了test()函数给IMMUTABLE_TEST初始化为9**
+```
+// 利用constructor初始化immutable变量，因此可以利用
+constructor(){
+    IMMUTABLE_ADDRESS = address(this);
+    IMMUTABLE_NUM = 1118;
+    IMMUTABLE_TEST = test();
+}
+
+function test() public pure returns(uint256){
+    uint256 what = 9;
+    return(what);
+}
+```
+### 10-控制流
+if-else
+```
+function ifElseTest(uint256 _number) public pure returns(bool){
+    if(_number == 0){
+        return(true);
+    }else{
+        return(false);
+    }
+}
+```
+for循环
+```
+function forLoopTest() public pure returns(uint256){
+    uint sum = 0;
+    for(uint i = 0; i < 10; i++){
+        sum += i;
+    }
+    return(sum);
+}
+```
+while循环
+```
+function whileTest() public pure returns(uint256){
+    uint sum = 0;
+    uint i = 0;
+    while(i < 10){
+        sum += i;
+        i++;
+    }
+    return(sum);
+}
+```
+do-while循环
+```
+function doWhileTest() public pure returns(uint256){
+    uint sum = 0;
+    uint i = 0;
+    do{
+        sum += i;
+        i++;
+    }while(i < 10);
+    return(sum);
+}
+```
+三元运算符
+```
+// 三元运算符 ternary/conditional operator
+function ternaryTest(uint256 x, uint256 y) public pure returns(uint256){
+    // return the max of x and y
+    return x >= y ? x: y; 
+}
+```
+用Solidity实现插入排序
+```
+// 插入排序 正确版
+function insertionSort(uint[] memory a) public pure returns(uint[] memory) {
+    // note that uint can not take negative value
+    for (uint i = 1;i < a.length;i++){
+        uint temp = a[i];
+        uint j=i;
+        while( (j >= 1) && (temp < a[j-1])){
+            a[j] = a[j-1];
+            j--;
+        }
+        a[j] = temp;
+    }
+    return(a);
+}
 ```
 ### 11
 ```
