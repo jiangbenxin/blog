@@ -47,6 +47,7 @@
 [小米su7源码](https://github.com/alphardex )</br>
 [su7在线演示](https://gamemcu.com/su7/)</br>
 [某个官网threejs特效](https://dala.craftedbygc.com/)</br>
+[古柳的](https://codepen.io/collection/pgYoom)
 ##### 部分技术要求
 请求库协议层：GraphQl、Trpc、OpenApi。 
 框架：React、Next、Rn、Nest、Express。 
