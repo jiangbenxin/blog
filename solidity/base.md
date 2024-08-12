@@ -6,12 +6,10 @@ contract HelloWeb3{
     string public _string = "Hello Web3!";
 }
 ```
-### 01
+### 01-值类型
+
+#### 布尔值
 ```
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.21;
-contract ValueTypes{
-    // 布尔值
     bool public _bool = true;
     // 布尔运算
     bool public _bool1 = !_bool; //取非
@@ -20,8 +18,9 @@ contract ValueTypes{
     bool public _bool4 = _bool == _bool1; //相等
     bool public _bool5 = _bool != _bool1; //不相等
 
-
-    // 整数
+```
+#### 整数
+```
     int public _int = -1;
     uint public _uint = 1;
     uint256 public _number = 20220330;
@@ -30,8 +29,9 @@ contract ValueTypes{
     uint256 public _number2 = 2**2; // 指数
     uint256 public _number3 = 7 % 2; // 取余数
     bool public _numberbool = _number2 > _number3; // 比大小
-
-    // 地址
+```
+#### 地址
+```
     address public _address = 0x7A58c0Be72BE218B41C608b7Fe7C5bB630736C71;
     address payable public _address1 = payable(_address); // payable address，可以转账、查余额
     // 地址类型的成员
@@ -40,8 +40,9 @@ contract ValueTypes{
     // 固定长度的字节数组
     bytes32 public _byte32 = "MiniSolidity"; // bytes32: 0x4d696e69536f6c69646974790000000000000000000000000000000000000000
     bytes1 public _byte = _byte32[0]; // bytes1: 0x4d
-    
-    // Enum
+ ```
+#### Enum
+```
     // 将uint 0， 1， 2表示为Buy, Hold, Sell
     enum ActionSet { Buy, Hold, Sell }
     // 创建enum变量 action
@@ -51,50 +52,50 @@ contract ValueTypes{
     function enumToUint() external view returns(uint){
         return uint(action);
     }
-}
 ```
-### 02
+### 02-函数类型
 ```
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.21;
-contract FunctionTypes{
     uint256 public number = 5;
     
     constructor() payable {}
-
-    // 函数类型
+```
+```
     // function (<parameter types>) {internal|external} [pure|view|payable] [returns (<return types>)]
     // 默认function
     function add() external{
         number = number + 1;
     }
-
+```
     // pure: 纯纯牛马
+```
     function addPure(uint256 _number) external pure returns(uint256 new_number){
         new_number = _number+1;
     }
-    
+```
     // view: 看客
+```
     function addView() external view returns(uint256 new_number) {
         new_number = number + 1;
     }
-
+```
     // internal: 内部函数
+```
     function minus() internal {
         number = number - 1;
     }
-
+```
     // 合约内的函数可以调用内部函数
+```
     function minusCall() external {
         minus();
     }
-
+```
     // payable: 递钱，能给合约支付eth的函数
+```
     function minusPayable() external payable returns(uint256 balance) {
         minus();    
         balance = address(this).balance;
     }
-}
 ```
 ### 03
 ```
