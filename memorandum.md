@@ -1,12 +1,10 @@
 ### web3
-
 [wtf](https://wtf.academy/) </br>
 [web3.career](https://web3.career/)</br>
 [登链社区](https://learnblockchain.cn/)</br>
 [ibuidl社区](https://blog.ibuidl.org/en)</br>
 [betterweb3](https://abetterweb3.notion.site/abetterweb3-7ce334dcf8524cb79a5894bdd784ddb4)</br>
 []()</br>
-
 ### tools
 [免费chatgpt](https://x.aichatos8.cn/#/chat/1698143021033)</br>
 [内网穿透](https://natapp.cn/member/dashborad)</br>
@@ -16,19 +14,9 @@
 [汪总给的的代理](https://github.com/FelisCatus/SwitchyOmega/wiki/GFWList)</br>
 [加速](https://dala.craftedbygc.com/)</br>
 []()</br>
-[]()</br>
-[]()</br>
-
 ### 学习
-
 [极客时间](https://time.geekbang.org/ )</br>
-[]()</br>
-[]()</br>
-[]()</br>
-[]()</br>
-[]()</br>
 ### 奇怪的website
-
 [极客网](https://news.fromgeek.com/)</br>
 [别人的博客](https://strikefreedom.top/archives/pipe-pool-for-splice-in-go)</br>
 []()</br>
@@ -37,8 +25,8 @@
 [nest+vue](https://github.com/zclzone/vue-naive-admin?tab=readme-ov-file)</br>
 [宋义攀一个nest+vue+threejs的开源者](https://gitee.com/songyipantest/)</br>[]()</br>
 [nest+ruoyi](https://github.com/taozhi1010/nest-admin)</br>
+[]()</br>
 ### remote job
-
 [rebase社区](https://github.com/rebase-network/who-is-hiring?tab=readme-ov-file)</br>
 [hire](https://hiring.cafe/)</br>
 [未知]( www.techjobasia.com/zh-Hans)</br>
@@ -46,10 +34,7 @@
 [ineed](https://hk.indeed.com/)</br>
 [jbcdb](https://hk.jobsdb.com/)</br>[]()</br>
 [未知](https://www.jobs.femalefactor.global/)</br>
-
 []()</br>
-[]()</br>
-
 ### threejs
 [threejs官网](https://threejs.org/)</br>
 [模型网](https://www.poliigon.com/texture/old-wooden-slate-shingle-roof-texture/7834  )</br>
@@ -63,6 +48,7 @@
 [学习网站threejs](https://three.ucalendar.cn/)</br>
 [小米su7源码](https://github.com/alphardex )</br>
 [su7在线演示](https://gamemcu.com/su7/)</br>
+[]()</br>
 ##### 部分技术要求
 请求库协议层：GraphQl、Trpc、OpenApi。 
 框架：React、Next、Rn、Nest、Express。 
