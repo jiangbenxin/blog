@@ -94,7 +94,41 @@ function getString2(uint256 _number) public pure returns(string memory){
     return Strings.toHexString(_number);
 }
 ```
-### 18-接受合约
+### 18-import
+```
+文件结构
+├── Import.sol
+└── Yeye.sol
+
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.21;
+
+// 通过文件相对位置import
+import './Yeye.sol';
+// 通过`全局符号`导入特定的合约
+import {Yeye} from './Yeye.sol';
+// 通过网址引用
+import 'https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/Address.sol';
+// 引用OpenZeppelin合约
+import '@openzeppelin/contracts/access/Ownable.sol';
+
+contract Import {
+    // 成功导入Address库
+    using Address for address;
+    // 声明yeye变量
+    Yeye yeye = new Yeye();
+
+    // 测试是否能调用yeye的函数
+    function test() external{
+        yeye.hip();
+    }
+}
+// 改名
+// 通过`全局符号`导入特定的合约
+import { test as Yeye} from './Yeye.sol';
+import * as test from './Yeye.sol';
+```
+### 19-接收ETH
 接收ETH函数 receive
 ```
 // 定义事件
@@ -127,4 +161,64 @@ receive()存在?   fallback()
        是  否
       /     \
 receive()   fallback()
+```
+### 20
+接收ETH合约
+```
+contract ReceiveETH {
+    // 收到eth事件，记录amount和gas
+    event Log(uint amount, uint gas);
+    
+    // receive方法，接收eth时被触发
+    receive() external payable{
+        emit Log(msg.value, gasleft());
+    }
+    
+    // 返回合约ETH余额
+    function getBalance() view public returns(uint) {
+        return address(this).balance;
+    }
+}
+```
+发送ETH合约
+```
+contract SendETH {
+    // 构造函数，payable使得部署的时候可以转eth进去
+    constructor() payable{}
+    // receive方法，接收eth时被触发
+    receive() external payable{}
+}
+```
+transfer
+```
+// 用transfer()发送ETH
+function transferETH(address payable _to, uint256 amount) external payable{
+    _to.transfer(amount);
+}
+```
+send
+```
+error SendFailed(); // 用send发送ETH失败error
+
+// send()发送ETH
+function sendETH(address payable _to, uint256 amount) external payable{
+    // 处理下send的返回值，如果失败，revert交易并发送error
+    bool success = _to.send(amount);
+    if(!success){
+        revert SendFailed();
+    }
+}
+```
+call
+```
+error CallFailed(); // 用call发送ETH失败error
+
+// call()发送ETH
+function callETH(address payable _to, uint256 amount) external payable{
+    // 处理下call的返回值，如果失败，revert交易并发送error
+    (bool success,) = _to.call{value: amount}("");
+    if(!success){
+        revert CallFailed();
+    }
+}
 ```
