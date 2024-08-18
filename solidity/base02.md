@@ -275,3 +275,246 @@ function setXTransferETH(address otherContract, uint256 x) payable external{
     OtherContract(otherContract).setX{value: msg.value}(x);
 }
 ```
+### 22-Call
+目标合约
+```
+contract OtherContract {
+    uint256 private _x = 0; // 状态变量x
+    // 收到eth的事件，记录amount和gas
+    event Log(uint amount, uint gas);
+    
+    fallback() external payable{}
+
+    // 返回合约ETH余额
+    function getBalance() view public returns(uint) {
+        return address(this).balance;
+    }
+
+    // 可以调整状态变量_x的函数，并且可以往合约转ETH (payable)
+    function setX(uint256 x) external payable{
+        _x = x;
+        // 如果转入ETH，则释放Log事件
+        if(msg.value > 0){
+            emit Log(msg.value, gasleft());
+        }
+    }
+
+    // 读取x
+    function getX() external view returns(uint x){
+        x = _x;
+    }
+}
+```
+1. Response事件
+```
+// 定义Response事件，输出call返回的结果success和data
+event Response(bool success, bytes data);
+```
+2. 调用setX函数
+```
+function callSetX(address payable _addr, uint256 x) public payable {
+    // call setX()，同时可以发送ETH
+    (bool success, bytes memory data) = _addr.call{value: msg.value}(
+        abi.encodeWithSignature("setX(uint256)", x)
+    );
+
+    emit Response(success, data); //释放事件
+}
+```
+3. 调用getX函数
+```
+function callGetX(address _addr) external returns(uint256){
+    // call getX()
+    (bool success, bytes memory data) = _addr.call(
+        abi.encodeWithSignature("getX()")
+    );
+
+    emit Response(success, data); //释放事件
+    return abi.decode(data, (uint256));
+}
+```
+4. 调用不存在的函数
+```
+function callNonExist(address _addr) external{
+    // call 不存在的函数
+    (bool success, bytes memory data) = _addr.call(
+        abi.encodeWithSignature("foo(uint256)")
+    );
+
+    emit Response(success, data); //释放事件
+}
+```
+### 23-Delegatecall
+Delegatecall
+```
+目标合约地址.delegatecall(二进制编码);
+abi.encodeWithSignature("函数签名", 逗号分隔的具体参数)
+```
+delegatecall例子
+```
+// 被调用的合约C
+contract C {
+    uint public num;
+    address public sender;
+
+    function setVars(uint _num) public payable {
+        num = _num;
+        sender = msg.sender;
+    }
+}
+发起调用的合约B
+contract B {
+    uint public num;
+    address public sender;
+}
+// 通过call来调用C的setVars()函数，将改变合约C里的状态变量
+function callSetVars(address _addr, uint _num) external payable{
+    // call setVars()
+    (bool success, bytes memory data) = _addr.call(
+        abi.encodeWithSignature("setVars(uint256)", _num)
+    );
+}
+// 通过delegatecall来调用C的setVars()函数，将改变合约B里的状态变量
+function delegatecallSetVars(address _addr, uint _num) external payable{
+    // delegatecall setVars()
+    (bool success, bytes memory data) = _addr.delegatecall(
+        abi.encodeWithSignature("setVars(uint256)", _num)
+    );
+}
+```
+### 24-创建新合约
+create
+```
+Contract x = new Contract{value: _value}(params)
+```
+极简Uniswap
+1. UniswapV2Pair: 币对合约，用于管理币对地址、流动性、买卖。
+2. UniswapV2Factory: 工厂合约，用于创建新的币对，并管理币对地址。
+Pair合约
+```
+contract Pair{
+    address public factory; // 工厂合约地址
+    address public token0; // 代币1
+    address public token1; // 代币2
+
+    constructor() payable {
+        factory = msg.sender;
+    }
+
+    // called once by the factory at time of deployment
+    function initialize(address _token0, address _token1) external {
+        require(msg.sender == factory, 'UniswapV2: FORBIDDEN'); // sufficient check
+        token0 = _token0;
+        token1 = _token1;
+    }
+}
+```
+PairFactory
+WBNB地址: 0x2c44b726ADF1963cA47Af88B284C06f30380fC78
+BSC链上的PEOPLE地址: 0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c
+```
+contract PairFactory{
+    mapping(address => mapping(address => address)) public getPair; // 通过两个代币地址查Pair地址
+    address[] public allPairs; // 保存所有Pair地址
+
+    function createPair(address tokenA, address tokenB) external returns (address pairAddr) {
+        // 创建新合约
+        Pair pair = new Pair(); 
+        // 调用新合约的initialize方法
+        pair.initialize(tokenA, tokenB);
+        // 更新地址map
+        pairAddr = address(pair);
+        allPairs.push(pairAddr);
+        getPair[tokenA][tokenB] = pairAddr;
+        getPair[tokenB][tokenA] = pairAddr;
+    }
+}
+```
+### 25-create2
+使用
+```
+Contract x = new Contract{salt: _salt, value: _value}(params)
+```
+极简Uniswap2
+Pair
+```
+contract Pair{
+    address public factory; // 工厂合约地址
+    address public token0; // 代币1
+    address public token1; // 代币2
+
+    constructor() payable {
+        factory = msg.sender;
+    }
+
+    // called once by the factory at time of deployment
+    function initialize(address _token0, address _token1) external {
+        require(msg.sender == factory, 'UniswapV2: FORBIDDEN'); // sufficient check
+        token0 = _token0;
+        token1 = _token1;
+    }
+}
+```
+PairFactory2
+```
+contract PairFactory2{
+    mapping(address => mapping(address => address)) public getPair; // 通过两个代币地址查Pair地址
+    address[] public allPairs; // 保存所有Pair地址
+
+    function createPair2(address tokenA, address tokenB) external returns (address pairAddr) {
+        require(tokenA != tokenB, 'IDENTICAL_ADDRESSES'); //避免tokenA和tokenB相同产生的冲突
+        // 用tokenA和tokenB地址计算salt
+        (address token0, address token1) = tokenA < tokenB ? (tokenA, tokenB) : (tokenB, tokenA); //将tokenA和tokenB按大小排序
+        bytes32 salt = keccak256(abi.encodePacked(token0, token1));
+        // 用create2部署新合约
+        Pair pair = new Pair{salt: salt}(); 
+        // 调用新合约的initialize方法
+        pair.initialize(tokenA, tokenB);
+        // 更新地址map
+        pairAddr = address(pair);
+        allPairs.push(pairAddr);
+        getPair[tokenA][tokenB] = pairAddr;
+        getPair[tokenB][tokenA] = pairAddr;
+    }
+}
+```
+WBNB地址: 0x2c44b726ADF1963cA47Af88B284C06f30380fC78
+BSC链上的PEOPLE地址: 0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c
+事先计算Pair地址
+```
+// 提前计算pair合约地址
+function calculateAddr(address tokenA, address tokenB) public view returns(address predictedAddress){
+    require(tokenA != tokenB, 'IDENTICAL_ADDRESSES'); //避免tokenA和tokenB相同产生的冲突
+    // 计算用tokenA和tokenB地址计算salt
+    (address token0, address token1) = tokenA < tokenB ? (tokenA, tokenB) : (tokenB, tokenA); //将tokenA和tokenB按大小排序
+    bytes32 salt = keccak256(abi.encodePacked(token0, token1));
+    // 计算合约地址方法 hash()
+    predictedAddress = address(uint160(uint(keccak256(abi.encodePacked(
+        bytes1(0xff),
+        address(this),
+        salt,
+        keccak256(type(Pair).creationCode)
+        )))));
+}
+```
+如果部署合约构造函数中存在参数
+```
+Pair pair = new Pair{salt: salt}(address(this));
+predictedAddress = address(uint160(uint(keccak256(abi.encodePacked(
+                bytes1(0xff),
+                address(this),
+                salt,
+                keccak256(abi.encodePacked(type(Pair).creationCode, abi.encode(address(this))))
+            )))));
+```
+type关键字
+```
+type(c).name(string)合约的名称
+type(c).creationCode(bytes memory)合约的创建字节码
+type(c).runtimecode(bytes memory)合约运行时字节码
+type(c).interfacedId(bytes4)合约的包含给定接口的 EIP-165 接口提示符
+type(c).min(T)整型T的最小值
+type(c).max(T)整型T的最大值
+```
+
+
