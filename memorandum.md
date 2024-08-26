@@ -25,6 +25,7 @@
 [nest+ruoyi](https://github.com/taozhi1010/nest-admin)</br>
 [好东西react](https://github.com/hepengwei)</br>
 [很炫的博客hexo](https://github.com/shw2018/hexo-blog-fly)
+[hey](https://github.com/heyxyz/hey?tab=readme-ov-file)
 
 ### remote job
 [rebase社区](https://github.com/rebase-network/who-is-hiring?tab=readme-ov-file)</br>
