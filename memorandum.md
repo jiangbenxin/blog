@@ -24,7 +24,7 @@
 [宋义攀一个nest+vue+threejs的开源者](https://gitee.com/songyipantest/)</br>
 [nest+ruoyi](https://github.com/taozhi1010/nest-admin)</br>
 [好东西react](https://github.com/hepengwei)</br>
-[很炫的博客hexo](https://github.com/shw2018/hexo-blog-fly)
+[很炫的博客hexo](https://github.com/shw2018/hexo-blog-fly)<br/>
 [hey](https://github.com/heyxyz/hey?tab=readme-ov-file)
 
 ### remote job
