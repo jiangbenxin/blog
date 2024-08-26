@@ -35,6 +35,8 @@
 [ineed](https://hk.indeed.com/)</br>
 [jbcdb](https://hk.jobsdb.com/)</br>
 [未知](https://www.jobs.femalefactor.global/)</br>
+[cryptojobslist.com](https://cryptojobslist.com/)
+[黑客松](https://ethglobal.com/)
 
 ### threejs
 [threejs官网](https://threejs.org/)</br>
