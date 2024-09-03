@@ -6,5 +6,5 @@
 3. [备忘录](memorandum.md)
 4. [solidity学习/博客](solidity/project.md)
 5. [solidity面试](solidity/interview.md)
-5. [应该掌握的10个合约](solidity/ten smart contracts.md)
+5. [应该掌握的10个合约](solidity/smartcontracts.md)
 6. 
