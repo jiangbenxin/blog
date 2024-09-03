@@ -8,3 +8,4 @@
 5. [contracts](solidity/smartcontracts.md)
 6. [ERC 6963](https://github.com/MetaMask/vite-react-ts-eip-6963)
 7. [gas优化](https://decert.me/tutorial/rareskills-gas-optimization/)
+8. [登链](https://www.learnblockchain.cn/article/8573)
