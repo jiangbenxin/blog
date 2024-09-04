@@ -30,7 +30,7 @@
 ### remote job
 [rebase社区](https://github.com/rebase-network/who-is-hiring?tab=readme-ov-file)</br>
 [hire](https://hiring.cafe/)</br>
-[未知]( www.techjobasia.com/zh-Hans)</br>
+[未知](https://www.techjobasia.com/zh-Hans)</br>
 [电鸭社区](https://eleduck.com/)</br>
 [ineed](https://hk.indeed.com/)</br>
 [jbcdb](https://hk.jobsdb.com/)</br>
