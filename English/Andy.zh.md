@@ -274,3 +274,25 @@ My father has strong convictions, he knows what he believes and he says what he 
 Really not a normal concept in Washington DC. In less than four years, president Trump has rebuilt the United States military, secured America’s borders, defeated the ISIS caliphate, fostered peace in the Middle East, delivered historic tax and regulatory cuts, fixed our broken trade deals and brought jobs back to America and back to Florida.
 This is the fighter, the doer that you have chosen as your nominee, in ways no one expected, this moment in the life of our country has defined a mission and given it to an extraordinary man, he’s ready to see it all the way through to speak to every man and every woman of every background in every part of this great country to earn your trust and to earn your vote, and I could not be more proud tonight to present to you and to all of America, my father and our next president 
 Donald.J.Trump.
+### 02-08
+It's a pleasure to have you, Yuhui.
+My pleasure.
+So when you first started, there was a time that you couldn’t sell. You had very few followers, five to say？
+Five or four. Yeah.
+Yeah, did you see a point of making that effort？And why did you carry on？What made you carry on？
+I wasn’t myself at the beginning when I was trying to sell goods to viewers in front of a screen. I belittled myself. I thought that was meaningless. Cuz I used to be a teacher, an English teacher for eight years. So I defined myself as someone who spreads the knowledge, and what ambition, what mission they should make for their future. I am not the person to yell in front of the screen. That wasn’t something a teacher should do. 
+You don’t take pride in what you had to do.
+I didn’t find the turning point, even though the world was changing for me. Collapsed and reconstructed again. I didn’t realize that, I was too obsessed with my past. 
+Until one day, I learned a story, behind a farm product from Gansu province. A small county. Young people go to big cities for better jobs. The elderly, lack of care, and they still need to work in the fields. So, I suddenly realized that, yeah, that was me. Come on. You were from a certain kind of village just like that. 
+A small county just like that. You tried hard, you learned a lot, and then now you have the chance to do the right thing. Why are you hesitating for a long time？So, I suddenly realized that. I cannot be obsessed with my past as a teacher. I do enjoy it, but when you have no choice, make your current choice correct.
+So, in a way, you are becoming more mature of accepting criticism compared to when you were a teacher.
+Definitely. Yeah. You can still find 
+very…like…haha…unfriendly feedback from the internet for me. I heard it. I saw it. I know. I don’t care. I am still me, myself. There was a person, who typed “You are so ugly, why are you here？”, “You are so ugly, why are you here？” for the whole night.
+Did that hurt your feelings？
+At first, yeah. Well, I realized I wasn’t good looking at all, I mean.
+But then once you joked on your live streaming show, some followers say that you resemble the Terracotta Warriors.
+Yeah. I do like a Terracotta Warrior which is my privilege because…haha… Definitely my privilege.
+Yeah. That’s certainly a nice way…
+When you see me, you see history, okay？
+And finally, Yuhui. If you were to introduce yourself to global audience, who may not be that familiar with you…in a few sentences, what would you say about yourself？
+A young man with not very good English, especially my accent and pronunciation and grammatical mistakes. I’m sorry, yeah. You suffered a lot in this interview, thank you.
