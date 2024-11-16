@@ -18,6 +18,8 @@
 [加速2](https://yyoos.to/)</br>
 [加速3](https://pkhub.net/)</br>
 [game](https://f95zone.to/)</br>
+[game2](https://vam.beixi.top/)</br>
+
 ### 学习
 [极客时间](https://time.geekbang.org/ )</br>
 ### 奇怪的website
